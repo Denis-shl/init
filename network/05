@@ -1,0 +1,1 @@
+nslookup slash16.org | grep Server | grep -Eo "\d+\.\d+\.\d+\.\d+"
