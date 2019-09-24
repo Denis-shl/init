@@ -1,0 +1,30 @@
+#!/bin/bash
+SETCOLOR_SUCCESS="echo -en \\033[1;32m"
+SETCOLOR_FAILURE="echo -en \\033[1;31m"
+SETCOLOR_NORMAL="echo -en \\033[0;39m"
+
+echo “scripts writes users root!!you root y/n?”
+read item
+case "$item" in
+    y|Y) echo "продолжаем..."
+		apt-get update
+		  if [ $? -eq 0 ]; then
+    	$SETCOLOR_SUCCESS
+   	echo -n "$(tput hpa $(tput cols))$(tput cub 6)[OK]"
+    	$SETCOLOR_NORMAL
+	else
+    	$SETCOLOR_FAILURE
+		echo -n "$(tput hpa $(tput cols))$(tput cub 6)[fail]"
+    	$SETCOLOR_SUCCESS
+	fi
+esac
+#apt-get update
+#apt-get upgrade
+#apt-get install vim
+#apt-get install git
+#apt-get install openssh_service
+#apt install software-properties-common apt-transport-https wget
+#wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+#sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode #stable main"
+#sudo apt install code
+exit 0
