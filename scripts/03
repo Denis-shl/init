@@ -8,6 +8,14 @@ read item
 case "$item" in
     y|Y) echo "продолжаем..."
 		apt-get update
+		apt-get upgrade
+		apt-get install openssh-server
+		apt-get install python3
+		apt-get install virtualbox
+		apt-get install vim
+		apt-get install git
+		apt-get install 
+
 		  if [ $? -eq 0 ]; then
     	$SETCOLOR_SUCCESS
    	echo -n "$(tput hpa $(tput cols))$(tput cub 6)[OK]"
@@ -17,6 +25,10 @@ case "$item" in
 		echo -n "$(tput hpa $(tput cols))$(tput cub 6)[fail]"
     	$SETCOLOR_SUCCESS
 	fi
+	;;
+	n|N) echo "sudo -i"
+		sudo -i
+	;;
 esac
 #apt-get update
 #apt-get upgrade
